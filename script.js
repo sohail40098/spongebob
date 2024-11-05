@@ -1,18 +1,13 @@
 // Caption Button Logic
 document.getElementById('caption-button').addEventListener('click', () => {
     const captionInput = document.getElementById('caption-input');
-    captionInput.style.display = 'block';
+    const caption = captionInput.value;
+    document.getElementById('meme-caption').textContent = caption;
 });
 
 // Upload Button Logic
 document.getElementById('upload-button').addEventListener('click', () => {
     document.getElementById('upload-input').click();
-});
-
-// Update Meme Caption
-document.getElementById('caption-input').addEventListener('input', (e) => {
-    const caption = e.target.value;
-    document.getElementById('meme-caption').textContent = caption;
 });
 
 // Change Caption Color
@@ -42,28 +37,26 @@ document.getElementById('save-button').addEventListener('click', () => {
     });
 });
 
-// Share Meme
-document.getElementById('share-button').addEventListener('click', () => {
+// Generate Share Link
+document.getElementById('generate-link-button').addEventListener('click', () => {
     const memeContainer = document.getElementById('meme-container');
     html2canvas(memeContainer).then(canvas => {
         canvas.toBlob(blob => {
             const file = new File([blob], 'spongebob-meme.png', { type: 'image/png' });
-            if (navigator.share) {
-                navigator.share({
-                    files: [file],
-                    title: 'SpongeBob Meme',
-                    text: 'Check out this meme I created!',
-                }).then(() => {
-                    console.log('Share successful');
-                }).catch(error => {
-                    console.error('Share failed:', error);
-                });
-            } else {
-                alert('Sharing is not supported in this browser.');
-            }
+            const shareableUrl = URL.createObjectURL(file);
+            document.getElementById('share-link').value = shareableUrl;
+            document.getElementById('share-link-container').style.display = 'block';
         });
     });
 });
+
+// Copy Share Link
+function copyShareLink() {
+    const shareLinkInput = document.getElementById('share-link');
+    shareLinkInput.select();
+    document.execCommand('copy');
+    alert('Share link copied to clipboard!');
+}
 
 // Switch Between Tabs
 function switchTab(tab) {
