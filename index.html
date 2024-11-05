@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mocking SpongeBob Meme Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <button class="tab" onclick="switchTab('mocking')">Mocking SpongeBob Meme Generator</button>
+            <button class="tab" onclick="switchTab('prehistoric')">Prehistoric SpongeBob Meme Generator</button>
+            <button class="tab" onclick="switchTab('exhausted')">Exhausted SpongeBob Meme Generator</button>
+            <button class="tab" onclick="switchTab('stupid')">Stupid SpongeBob Meme Generator</button>
+        </div>
+        <img src="spongebob-logo.png" alt="SpongeBob Logo" class="logo">
+        <h1 id="main-title">Mocking SpongeBob Meme Generator</h1>
+        <p id="description" class="description">Generate your own mocking SpongeBob meme and share the laughs!</p>
+        <div class="button-container">
+            <button id="caption-button">Add Caption</button>
+            <button id="upload-button">Upload Your Image</button>
+        </div>
+        <div class="color-picker">
+            <label for="color-input">Choose Caption Color:</label>
+            <input type="color" id="color-input" value="#ffffff">
+        </div>
+        <input type="text" id="caption-input" placeholder="Enter your caption here" style="display: none;">
+        <input type="file" id="upload-input" accept="image/*" style="display: none;">
+        <div class="meme-container">
+            <img id="meme-image" src="spongebob-mocking.jpg" alt="Mocking SpongeBob">
+            <div id="meme-caption" class="meme-caption"></div>
+        </div>
+        <div class="button-container">
+            <button id="save-button">Save</button>
+            <button id="share-button">Share</button>
+        </div>
+        <footer>
+            <a href="privacy-policy.html">Privacy Policy</a> |
+            <a href="terms-and-conditions.html">Terms and Conditions</a> |
+            <a href="disclaimer.html">Disclaimer</a> |
+            <a href="about-us.html">About Us</a>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
