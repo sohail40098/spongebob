@@ -3,7 +3,7 @@ Looking to make hilarious SpongeBob memes? The SpongeBob Meme Generator is an ea
 
 ## How to Use It
 Visit the Website
-Go to the {SpongeBob Meme Generator}(https://sohail40098.github.io/spongebob-meme-generator/)
+Go to the [SpongeBob Meme Generator](https://sohail40098.github.io/spongebob-meme-generator/)
 
 ## Pick a Template
 Choose from various popular SpongeBob meme templates, like “Mocking SpongeBob” or “Tired SpongeBob.”
